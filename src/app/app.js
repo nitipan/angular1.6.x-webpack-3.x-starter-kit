@@ -1,5 +1,6 @@
-import _ from 'lodash';
+import 'bootstrap';
 import angular from 'angular';
+
 
 import approot from './components/approot.component';
 

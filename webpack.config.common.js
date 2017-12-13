@@ -7,7 +7,7 @@ const webpack = require('webpack');
 module.exports = {
     entry: {
         main: './src/app/app.js',
-        vendors: ['angular', 'lodash']
+        vendors: ['angular', 'lodash', 'bootstrap', 'jquery']
     },
     output: {
         filename: '[name].[chunkhash].js',
@@ -26,6 +26,11 @@ module.exports = {
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest'
+        }),
+        new webpack.ProvidePlugin({
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            _: "lodash"
         })
     ],
     module: {
