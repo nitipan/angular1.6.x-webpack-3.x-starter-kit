@@ -13,10 +13,6 @@ module.exports = {
         filename: '[name].[chunkhash].js',
         path: path.resolve(__dirname, 'dist')
     },
-    devtool: 'inline-source-map',
-    devServer: {
-        contentBase: './dist'
-    },
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
@@ -42,6 +38,15 @@ module.exports = {
         }, {
             test: /\.html$/,
             use: 'raw-loader'
+        }, {
+            test: /\.js$/,
+            exclude: /(node_modules|bower_components)/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['env']
+                }
+            }
         }]
 
     }
