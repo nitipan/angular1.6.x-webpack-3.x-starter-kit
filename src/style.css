@@ -1,1 +1,7 @@
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+.logo {
+    background-image: url('assets/logo.png');
+    display: block;
+    width: 383px;
+    height: 108px;
+}

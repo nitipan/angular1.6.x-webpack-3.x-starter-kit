@@ -39,6 +39,9 @@ module.exports = {
             test: /\.html$/,
             use: 'raw-loader'
         }, {
+            test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+            loader: 'file-loader?name=[name].[ext]&outputPath=assets/'
+        }, {
             test: /\.js$/,
             exclude: /(node_modules|bower_components)/,
             use: {
